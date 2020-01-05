@@ -25,7 +25,8 @@ namespace StringyEnums
 			if (initializer is null)
 				throw new ArgumentNullException(nameof(initializer));
 
-			var cacheInit = new CacheInitializer();
+			var cacheInit = new CacheInitializer()
+								.InitWith(Assembly.GetCallingAssembly());
 
 			initializer?.Invoke(cacheInit);
 
