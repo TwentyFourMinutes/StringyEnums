@@ -6,7 +6,7 @@ Provides a slim and fast way for mapping enums to strings and vice versa in C#. 
 
 ## About
 
-This package brings a neat way to bind your enum members to a given string and vice versa. You can define it's value with simple attributes and query them by extension methods. This package prefers the runtime performance rather than memory consumption, anyhow it is _optimized at its best_™. 
+This package brings a neat way to bind your enum members to a given string and vice versa. You can define it's value with simple attributes and query them by extension methods. This package prefers the runtime performance rather than memory consumption, anyhow it is _optimized at its best_ ™. 
 
 ## Installation
 
