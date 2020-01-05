@@ -15,12 +15,12 @@ namespace StringyEnums.Test
 		[InlineData(TestEnum.EnumOne, "Enum 1")]
 		[InlineData(TestEnum.EnumTwo, "Enum 2")]
 		public void IsRepresenationEqual(TestEnum enumVal, string representation)
-			=> Assert.Equal(representation, enumVal.GetStringRepresentation());
+			=> Assert.Equal(representation, enumVal.GetRepresentation());
 
 		[Theory]
 		[InlineData(TestEnum.EnumOne | TestEnum.EnumTwo, "Enum 1", "Enum 2")]
 		public void IsFlagRepresenationEqual(TestEnum enumVal, params string[] representation)
-			=> Assert.Equal(enumVal.GetFlagStringRepresentation(), representation);
+			=> Assert.Equal(enumVal.GetFlagRepresentation(), representation);
 
 		[Theory]
 		[InlineData(TestEnum.EnumOne, "Enum 1")]

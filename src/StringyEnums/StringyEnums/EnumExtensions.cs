@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace StringyEnums
 {
 	public static class EnumExtensions
 	{
-		public static string GetStringRepresentation<TEnum>(this TEnum enumValue) where TEnum : struct, Enum
+		public static string GetRepresentation<TEnum>(this TEnum enumValue) where TEnum : struct, Enum
 		{
 			if (EnumCore.RepresentationCache.TryGetValue(typeof(TEnum), out var dict))
 			{
@@ -18,7 +18,7 @@ namespace StringyEnums
 			throw new InvalidOperationException("The enum passed, isn't in any assemblies passed to the EnumCore.Init method.");
 		}
 
-		public static string[] GetFlagStringRepresentation<TEnum>(this TEnum enumValue) where TEnum : struct, Enum
+		public static string[] GetFlagRepresentation<TEnum>(this TEnum enumValue) where TEnum : struct, Enum
 		{
 			if (EnumCore.RepresentationCache.TryGetValue(typeof(TEnum), out var dict))
 			{
