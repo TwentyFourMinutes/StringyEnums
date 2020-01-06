@@ -1,4 +1,4 @@
-﻿using BidirectionalDict;
+using BidirectionalDict;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,6 +7,9 @@ using System.Reflection;
 
 namespace StringyEnums
 {
+	/// <summary>
+	/// Handles the initializing of a Cache 
+	/// </summary>
 	public class CacheInitializer
 	{
 		private readonly Dictionary<Type, IReadOnlyBiDictionary<int, string>> _tempCache;
@@ -16,6 +19,10 @@ namespace StringyEnums
 			_tempCache = new Dictionary<Type, IReadOnlyBiDictionary<int, string>>();
 		}
 
+		/// <summary>
+		/// Initializes the cache a given set of assemblies.
+		/// </summary>
+		/// <param name="assemblies">Assemblies which contain enums which get added to the cache.</param>
 		public CacheInitializer InitWith(params Assembly[] assemblies)
 		{
 			foreach (var assembly in assemblies)
