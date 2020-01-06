@@ -60,8 +60,9 @@ Every method has a `Try` implementation which are safe to use and don't throw ex
 Otherwise the method will throw a `KeyNotFoundException` which can have several reasons:
 
 - The enum does not exist
+- The enum isn't decorated with the `StringRepresentationAttribute`
 - The enum wasn't added to the cache
-- The enum doesn't implement a member with the required `StringRepresentation`
+- The enum doesn't implement a member with the required `StringRepresentationAttribute`
 
 ## Features
 
