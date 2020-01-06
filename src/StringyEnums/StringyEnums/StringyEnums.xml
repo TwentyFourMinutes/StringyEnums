@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StringyEnums</name>
+    </assembly>
+    <members>
+        <member name="T:StringyEnums.CacheInitializer">
+            <summary>
+            Handles the initializing of a Cache 
+            </summary>
+        </member>
+        <member name="M:StringyEnums.CacheInitializer.InitWith(System.Reflection.Assembly[])">
+            <summary>
+            Initializes the cache a given set of assemblies.
+            </summary>
+            <param name="assemblies">Assemblies which contain enums which get added to the cache.</param>
+        </member>
+        <member name="M:StringyEnums.CacheInitializer.InitWith``1">
+            <summary>
+            Initializes the cache with a given enum.
+            </summary>
+            <typeparam name="TEnum">The enum which should be added to the cache.</typeparam>
+        </member>
+        <member name="M:StringyEnums.CacheInitializer.InitWith(System.Enum[])">
+            <summary>
+            Initializes the cache with a set of given enums.
+            </summary>
+            <param name="enums">The enums which should be added to the cache.</param>
+        </member>
+        <member name="T:StringyEnums.EnumCore">
+            <summary>
+            Handles caching of enums which have the <see cref="T:StringyEnums.StringRepresentationAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:StringyEnums.EnumCore.Init">
+            <summary>
+            Initializes the <see cref="T:StringyEnums.EnumCore"/> with the enums contained in the calling assembly.
+            </summary>
+        </member>
+        <member name="M:StringyEnums.EnumCore.Init(System.Action{StringyEnums.CacheInitializer},System.Boolean)">
+            <summary>
+            Initializes the <see cref="T:StringyEnums.EnumCore"/> with the enums provided by the <paramref name="initializer"/>.
+            </summary>
+            <param name="initializer">Provides a <see cref="T:StringyEnums.CacheInitializer"/> instance where assemblies with enums can be added.</param>
+            <param name="includeCallingAssembly">Indicates whether the calling assembly should be searched for enums or not.</param>
+        </member>
+        <member name="T:StringyEnums.EnumExtensions">
+            <summary>
+            Provides useful extension methods to retrieve the string representation of a bool and methods to parse string representations to bools.
+            </summary>
+        </member>
+        <member name="M:StringyEnums.EnumExtensions.GetRepresentation``1(``0)">
+            <summary>
+            Gets the string representation from the <see cref="T:StringyEnums.StringRepresentationAttribute"/> on the given <typeparamref name="TEnum"/>.
+            </summary>
+            <typeparam name="TEnum">The enum type.</typeparam>
+            <param name="enumValue">The enum member which the string representation should get retrieved from.</param>
+            <returns>The string representation of the given <paramref name="enumValue"/>.</returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Is thrown when the given <paramref name="enumValue"/> doesn't contain any string representation or the <typeparamref name="TEnum"/> isn't cached.</exception>
+        </member>
+        <member name="M:StringyEnums.EnumExtensions.TryGetRepresentation``1(``0,System.String@)">
+            <summary>
+            Tries to get the string representation from the <see cref="T:StringyEnums.StringRepresentationAttribute"/> on the given <typeparamref name="TEnum"/>.
+            </summary>
+            <typeparam name="TEnum">The enum type.</typeparam>
+            <param name="enumValue">The enum member which the string representation should get retrieved from.</param>
+            <param name="representation">The string representation of the given <paramref name="enumValue"/>.</param>
+            <returns>A bool which indicates whether the string representation could be retrieved or not.</returns>
+        </member>
+        <member name="M:StringyEnums.EnumExtensions.GetFlagRepresentation``1(``0)">
+            <summary>
+            Gets the string representation from the from the <see cref="T:StringyEnums.StringRepresentationAttribute"/> on all the given <typeparamref name="TEnum"/> flags.
+            </summary>
+            <typeparam name="TEnum">The enum type.</typeparam>
+            <param name="enumValue">The enum which the string representations should get retrieved from.</param>
+            <returns>All string representations of the given <paramref name="enumValue"/> flags.</returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Is thrown when one of given <paramref name="enumValue"/> flags doesn't contain any string representation or the <typeparamref name="TEnum"/> isn't cached.</exception>
+        </member>
+        <member name="M:StringyEnums.EnumExtensions.TryGetFlagRepresentation``1(``0,System.String[]@)">
+            <summary>
+            Tries to get the string representation from the from the <see cref="T:StringyEnums.StringRepresentationAttribute"/> on all the given <typeparamref name="TEnum"/> flags.
+            </summary>
+            <typeparam name="TEnum">The enum type.</typeparam>
+            <param name="enumValue">The enum which the string representations should get retrieved from.</param>
+            <param name="representations">The string representations of the given <paramref name="enumValue"/> flags.</param>
+            <returns>A bool which indicates whether all string representation could be retrieved or not.</returns>
+        </member>
+        <member name="M:StringyEnums.EnumExtensions.GetEnumFromRepresentation``1(System.String)">
+            <summary>
+            Gets the <typeparamref name="TEnum"/> from the string representation based on the <see cref="T:StringyEnums.StringRepresentationAttribute"/> of the given <typeparamref name="TEnum"/>.
+            </summary>
+            <typeparam name="TEnum">The enum type.</typeparam>
+            <param name="value">The string representation from which the <typeparamref name="TEnum"/> will get retrieved.</param>
+            <returns>The <typeparamref name="TEnum"/> member from the given <paramref name="value"/>.</returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Is thrown when no matching <typeparamref name="TEnum"/> member was found for the given <paramref name="value"/> or the <typeparamref name="TEnum"/> isn't cached.</exception>
+        </member>
+        <member name="M:StringyEnums.EnumExtensions.TryGetEnumFromRepresentation``1(System.String,``0@)">
+            <summary>
+            Tries to get the <typeparamref name="TEnum"/> from the string representation based on the <see cref="T:StringyEnums.StringRepresentationAttribute"/> of the given <typeparamref name="TEnum"/>.
+            </summary>
+            <typeparam name="TEnum">The enum type.</typeparam>
+            <param name="value">The string representation from which the <typeparamref name="TEnum"/> will get retrieved.</param>
+            <param name="enumResult">The <typeparamref name="TEnum"/> member from the given <paramref name="value"/>.</param>
+            <returns>A bool which indicates whether a <typeparamref name="TEnum"/> member from the given string representation could be retrieved or not.</returns>
+        </member>
+    </members>
+</doc>
