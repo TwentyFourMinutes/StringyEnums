@@ -20,13 +20,12 @@ namespace StringyEnums
 			RepresentationCache = new CacheInitializer().InitWith(Assembly.GetCallingAssembly()).CustructCache();
 		}
 
-		public static void Init(Action<CacheInitializer> initializer)
+		public static void Init(Action<CacheInitializer> initializer, bool includeCallingAssembly = true)
 		{
-			if (initializer is null)
-				throw new ArgumentNullException(nameof(initializer));
+			var cacheInit = new CacheInitializer();
 
-			var cacheInit = new CacheInitializer()
-								.InitWith(Assembly.GetCallingAssembly());
+			if (includeCallingAssembly)
+				cacheInit.InitWith(Assembly.GetCallingAssembly());
 
 			initializer?.Invoke(cacheInit);
 
