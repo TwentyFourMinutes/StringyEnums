@@ -54,6 +54,15 @@ StringyEnums is build upon a caching system under the hood, which is initialized
 
 Also note that this package is build on runtime performance on the `Release` build, which means that some methods might take for way longer than they do in reality. This is intended then the `Debug` build is not performing to much optimizing.
 
+### Disclaimer
+
+Every method has a `Try` implementation which are safe to use and don't throw exceptions. Only use the none `Try` implementations, if you are sure that the conversion, no matter which one, will be successful e.g. the enum exists. 
+Otherwise the method will throw a `KeyNotFoundException` which can have several reasons:
+
+- The enum does not exist
+- The enum wasn't added to the cache
+- The enum doesn't implement a member with the required `StringRepresentation`
+
 ## Features
 
 - C# 8.0 ready
