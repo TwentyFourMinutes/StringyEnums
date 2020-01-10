@@ -16,7 +16,7 @@ namespace StringyEnums
 		/// <returns>The string representation of the given <paramref name="enumValue"/>.</returns>
 		/// <exception cref="KeyNotFoundException">Is thrown when the given <paramref name="enumValue"/> doesn't contain any string representation or the <typeparamref name="TEnum"/> isn't cached.</exception>
 		public static string GetRepresentation<TEnum>(this TEnum enumValue) where TEnum : struct, Enum
-			=> EnumCore.RepresentationCache[typeof(TEnum)][(int)(dynamic)enumValue];
+			=> EnumCore.RepresentationCache[typeof(TEnum)][(uint)(dynamic)enumValue];
 
 		/// <summary>
 		/// Tries to get the string representation from the <see cref="StringRepresentationAttribute"/> on the given <typeparamref name="TEnum"/>.
@@ -29,7 +29,7 @@ namespace StringyEnums
 		{
 			if (EnumCore.RepresentationCache.TryGetValue(typeof(TEnum), out var dict))
 			{
-				return dict.TryGet((int)(dynamic)enumValue, out representation);
+				return dict.TryGet((uint)(dynamic)enumValue, out representation);
 			}
 
 			representation = default;
@@ -47,13 +47,13 @@ namespace StringyEnums
 		{
 			var dict = EnumCore.RepresentationCache[typeof(TEnum)];
 
-			var flags = (int)(dynamic)enumValue;
+			var flags = (uint)(dynamic)enumValue;
 
 			var tempArr = new string[GetHammingWeight(flags)];
 
 			int lastIndex = 0;
 
-			for (int i = 1; i <= flags; i *= 2)
+			for (uint i = 1; i <= flags; i *= 2)
 			{
 				if ((flags & i) != 0)
 				{
@@ -75,13 +75,13 @@ namespace StringyEnums
 		{
 			if (EnumCore.RepresentationCache.TryGetValue(typeof(TEnum), out var dict))
 			{
-				var flags = (int)(dynamic)enumValue;
+				var flags = (uint)(dynamic)enumValue;
 
 				representations = new string[GetHammingWeight(flags)];
 
 				int lastIndex = 0;
 
-				for (int i = 1; i <= flags; i *= 2)
+				for (uint i = 1; i <= flags; i *= 2)
 				{
 					if ((flags & i) != 0)
 					{
@@ -137,7 +137,7 @@ namespace StringyEnums
 			return false;
 		}
 
-		private static int GetHammingWeight(int value)
+		private static uint GetHammingWeight(uint value)
 		{
 			value -= ((value >> 1) & 0x55555555);
 			value = (value & 0x33333333) + ((value >> 2) & 0x33333333);

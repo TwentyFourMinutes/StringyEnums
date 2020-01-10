@@ -8,7 +8,12 @@ namespace StringyEnums.Test
 	{
 		public EnumExtensionTests()
 		{
-			EnumCore.Init(init => init.InitWith<TestEnum>());
+			EnumCore.Init(init =>
+			{
+				init.InitWith<TestEnum>();
+				init.InitWith<TestByteEnum>();
+				init.InitWith<TestUShortEnum>();
+			});
 		}
 
 		[Theory]
@@ -26,5 +31,15 @@ namespace StringyEnums.Test
 		[InlineData(TestEnum.EnumOne, "Enum 1")]
 		public void IsParseRepresenationEqual(TestEnum enumVal, string representation)
 			=> Assert.Equal(representation.GetEnumFromRepresentation<TestEnum>(), enumVal);
+
+		[Theory]
+		[InlineData(TestByteEnum.EnumOne, "Enum 1")]
+		public void IsByteParseRepresenationEqual(TestByteEnum enumVal, string representation)
+			=> Assert.Equal(representation.GetEnumFromRepresentation<TestByteEnum>(), enumVal);
+
+		[Theory]
+		[InlineData(TestUShortEnum.EnumOne, "Enum 1")]
+		public void IsUShortParseRepresenationEqual(TestUShortEnum enumVal, string representation)
+			=> Assert.Equal(representation.GetEnumFromRepresentation<TestUShortEnum>(), enumVal);
 	}
 }

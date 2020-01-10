@@ -12,11 +12,11 @@ namespace StringyEnums
 	/// </summary>
 	public class CacheInitializer
 	{
-		private readonly Dictionary<Type, IReadOnlyBiDictionary<int, string>> _tempCache;
+		private readonly Dictionary<Type, IReadOnlyBiDictionary<uint, string>> _tempCache;
 
 		internal CacheInitializer()
 		{
-			_tempCache = new Dictionary<Type, IReadOnlyBiDictionary<int, string>>();
+			_tempCache = new Dictionary<Type, IReadOnlyBiDictionary<uint, string>>();
 		}
 
 		/// <summary>
@@ -70,7 +70,7 @@ namespace StringyEnums
 
 			var fields = enumType.GetFields();
 
-			var temptDict = new BiDictionary<int, string>();
+			var temptDict = new BiDictionary<uint, string>();
 
 			foreach (var field in fields.Where(x => x.IsStatic))
 			{
@@ -78,7 +78,7 @@ namespace StringyEnums
 
 				if (attr is { })
 				{
-					temptDict.TryAdd((int)field.GetValue(enumType)!, attr.StringRepresentation);
+					temptDict.TryAdd(Convert.ToUInt32(field.GetValue(enumType))!, attr.StringRepresentation);
 				}
 			}
 
@@ -88,7 +88,7 @@ namespace StringyEnums
 			}
 		}
 
-		internal IReadOnlyDictionary<Type, IReadOnlyBiDictionary<int, string>> CustructCache()
-			=> new ReadOnlyDictionary<Type, IReadOnlyBiDictionary<int, string>>(_tempCache.ToDictionary(k => k.Key, v => (IReadOnlyBiDictionary<int, string>)new ReadOnlyBiDictionary<int, string>(v.Value)));
+		internal IReadOnlyDictionary<Type, IReadOnlyBiDictionary<uint, string>> CustructCache()
+			=> new ReadOnlyDictionary<Type, IReadOnlyBiDictionary<uint, string>>(_tempCache.ToDictionary(k => k.Key, v => (IReadOnlyBiDictionary<uint, string>)new ReadOnlyBiDictionary<uint, string>(v.Value)));
 	}
 }

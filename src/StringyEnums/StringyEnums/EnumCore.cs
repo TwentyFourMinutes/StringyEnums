@@ -10,9 +10,9 @@ namespace StringyEnums
 	/// </summary>
 	public static class EnumCore
 	{
-		private static IReadOnlyDictionary<Type, IReadOnlyBiDictionary<int, string>>? _representationCache;
+		private static IReadOnlyDictionary<Type, IReadOnlyBiDictionary<uint, string>>? _representationCache;
 
-		internal static IReadOnlyDictionary<Type, IReadOnlyBiDictionary<int, string>> RepresentationCache
+		internal static IReadOnlyDictionary<Type, IReadOnlyBiDictionary<uint, string>> RepresentationCache
 		{
 			get => _representationCache ?? throw new NotInitializedException("Please call the EnumCore.Initialize method at application startup.");
 			private set => _representationCache = value;
