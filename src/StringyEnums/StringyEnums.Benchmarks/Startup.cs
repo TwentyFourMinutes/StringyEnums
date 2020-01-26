@@ -5,7 +5,8 @@ namespace StringyEnums.Benchmarks
 {
 	public class Startup
 	{
-		public static void Main(string[] args)
-			=> BenchmarkRunner.Run(Assembly.GetExecutingAssembly());
+		public static void Main()
+			=> BenchmarkSwitcher.FromAssembly(Assembly.GetExecutingAssembly())
+								.RunAll(new NoOptimizationConfig());
 	}
 }

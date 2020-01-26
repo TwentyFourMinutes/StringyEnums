@@ -13,8 +13,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StringyEnums.Shared\StringyEnums.Shared.csproj" />
     <ProjectReference Include="..\StringyEnums\StringyEnums.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Common.EnumStringValues">
+      <HintPath>Common.EnumStringValues.dll</HintPath>
+    </Reference>
+    <Reference Include="EnumParser">
+      <HintPath>EnumParser.dll</HintPath>
+    </Reference>
+    <Reference Include="EnumStringValues">
+      <HintPath>EnumStringValues.dll</HintPath>
+    </Reference>
+    <Reference Include="StringyEnums">
+      <HintPath>StringyEnums.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
