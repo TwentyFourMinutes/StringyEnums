@@ -1,6 +1,6 @@
 # StringyEnums
 
-<img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/TwentyFourMinutes/StringyEnums?style=flat-square"> <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/TwentyFourMinutes/StringyEnums?include_prereleases&style=flat-square"> ![GitHub](https://img.shields.io/github/license/TwentyFourMinutes/StringyEnums?style=flat-square)
+![Nuget](https://img.shields.io/nuget/dt/StringyEnums)<img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/TwentyFourMinutes/StringyEnums?style=flat-square"> <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/TwentyFourMinutes/StringyEnums?include_prereleases&style=flat-square"> ![GitHub](https://img.shields.io/github/license/TwentyFourMinutes/StringyEnums?style=flat-square)
 
 Provides a slim and fast way for mapping enums to strings and vice versa in C#. StringyEnums targets .Net Standard so it's available to you for .Net Core and .Net Framework.
 
