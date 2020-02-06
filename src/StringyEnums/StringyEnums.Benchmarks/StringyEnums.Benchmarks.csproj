@@ -27,7 +27,7 @@
       <HintPath>EnumStringValues.dll</HintPath>
     </Reference>
     <Reference Include="StringyEnums">
-      <HintPath>StringyEnums.dll</HintPath>
+      <HintPath>..\StringyEnums\bin\Release\netstandard2.1\StringyEnums.dll</HintPath>
     </Reference>
   </ItemGroup>
 
