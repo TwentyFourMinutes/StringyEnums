@@ -103,5 +103,16 @@
             <param name="enumResult">The <typeparamref name="TEnum"/> member from the given <paramref name="value"/>.</param>
             <returns>A bool which indicates whether a <typeparamref name="TEnum"/> member from the given string representation could be retrieved or not.</returns>
         </member>
+        <member name="T:StringyEnums.StringRepresentationAttribute">
+            <summary>
+            Defines the string representation for an enum member.
+            </summary>
+        </member>
+        <member name="M:StringyEnums.StringRepresentationAttribute.#ctor(System.String)">
+            <summary>
+            Sets the string representation for an enum member.
+            </summary>
+            <param name="stringRepresentation">The string representation which should be set-</param>
+        </member>
     </members>
 </doc>
