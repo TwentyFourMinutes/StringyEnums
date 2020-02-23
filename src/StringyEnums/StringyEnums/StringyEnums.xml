@@ -6,7 +6,7 @@
     <members>
         <member name="T:StringyEnums.CacheInitializer">
             <summary>
-            Handles the initializing of a Cache 
+            Handles the initializing of a Cache
             </summary>
         </member>
         <member name="M:StringyEnums.CacheInitializer.InitWith(System.Reflection.Assembly[])">

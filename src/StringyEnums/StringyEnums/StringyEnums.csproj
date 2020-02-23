@@ -1,38 +1,38 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.1;netcoreapp3.1</TargetFrameworks>
-    <LangVersion>8</LangVersion>
-    <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0.3</Version>
-    <Authors>Twenty</Authors>
-    <Company>Twenty</Company>
-    <Product>StringyEnums</Product>
-    <Description>Provides a slim and fast way for mapping enums to strings.</Description>
-    <Copyright>Copyright ©2020 Twenty</Copyright>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <RepositoryUrl>https://github.com/TwentyFourMinutes/StringyEnums</RepositoryUrl>
-    <PackageTags>enum enums stringmatching string stringenums</PackageTags>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Title>StringyEnums</Title>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1;netcoreapp3.1;net48;</TargetFrameworks>
+		<LangVersion>8</LangVersion>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>1.1.0</Version>
+		<Authors>Twenty</Authors>
+		<Company>Twenty</Company>
+		<Product>StringyEnums</Product>
+		<Description>Provides a slim and fast way for mapping enums to strings.</Description>
+		<Copyright>Copyright ©2020 Twenty</Copyright>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<RepositoryUrl>https://github.com/TwentyFourMinutes/StringyEnums</RepositoryUrl>
+		<PackageTags>enum enums stringmatching string stringenums</PackageTags>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Title>StringyEnums</Title>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>StringyEnums.xml</DocumentationFile>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DocumentationFile>StringyEnums.xml</DocumentationFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="BidirectionalDict" Version="1.0.0.4" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="BidirectionalDict" Version="1.1.0" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+	</ItemGroup>
 
 </Project>

@@ -8,7 +8,7 @@ using System.Reflection;
 namespace StringyEnums
 {
 	/// <summary>
-	/// Handles the initializing of a Cache 
+	/// Handles the initializing of a Cache
 	/// </summary>
 	public class CacheInitializer
 	{
