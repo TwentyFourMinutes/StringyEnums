@@ -1,11 +1,9 @@
 ﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Configs;
-using BenchmarkDotNet.Validators;
 using Common.EnumStringValues;
 
 namespace StringyEnums.Benchmarks
 {
-	[MemoryDiagnoser]
+    [MemoryDiagnoser]
 	[Config(typeof(NoOptimizationConfig))]
 	public class CommonEnumStringValuesExtensionBenchmark
 	{

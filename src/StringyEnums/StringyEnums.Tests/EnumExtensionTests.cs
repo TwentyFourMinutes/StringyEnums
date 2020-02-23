@@ -1,12 +1,11 @@
-using BidirectionalDict;
 using StringyEnums.Shared.Models;
 using Xunit;
 
-namespace StringyEnums.Test
+namespace StringyEnums.Tests
 {
 	public class EnumExtensionTests
 	{
-		public EnumExtensionTests()
+		static EnumExtensionTests()
 		{
 			EnumCore.Init(init =>
 			{

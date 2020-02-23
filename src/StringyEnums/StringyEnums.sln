@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29521.150
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringyEnums", "StringyEnums\StringyEnums.csproj", "{EE98D267-C0D4-43E0-BCCA-609D3B7B56B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringyEnums.Tests", "StringyEnums.Test\StringyEnums.Tests.csproj", "{5FB57ACD-DE3E-49DC-8121-442EF7E38B9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringyEnums.Tests", "StringyEnums.Tests\StringyEnums.Tests.csproj", "{5FB57ACD-DE3E-49DC-8121-442EF7E38B9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringyEnums.Benchmarks", "StringyEnums.Benchmarks\StringyEnums.Benchmarks.csproj", "{D4CE5820-15CC-4D36-86B2-F858588A16ED}"
 EndProject

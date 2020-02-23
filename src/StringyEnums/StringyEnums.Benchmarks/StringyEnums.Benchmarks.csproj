@@ -10,10 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.12.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\StringyEnums\StringyEnums.csproj" />
+    <PackageReference Include="BidirectionalDict" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
