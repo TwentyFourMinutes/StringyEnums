@@ -17,6 +17,8 @@
 		<PackageTags>enum enums stringmatching string stringenums</PackageTags>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<Title>StringyEnums</Title>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>Twenty.pfx</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
