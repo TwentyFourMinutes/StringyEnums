@@ -14,6 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StringyEnums\StringyEnums.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Common.EnumStringValues">
       <HintPath>Common.EnumStringValues.dll</HintPath>
     </Reference>
@@ -22,9 +26,6 @@
     </Reference>
     <Reference Include="EnumStringValues">
       <HintPath>EnumStringValues.dll</HintPath>
-    </Reference>
-    <Reference Include="StringyEnums">
-      <HintPath>..\StringyEnums\bin\Release\netstandard2.1\StringyEnums.dll</HintPath>
     </Reference>
   </ItemGroup>
 

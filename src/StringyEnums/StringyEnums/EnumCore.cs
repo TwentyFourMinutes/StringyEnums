@@ -44,7 +44,8 @@ namespace StringyEnums
         {
             foreach (var cacheItem in cache.CustructCache())
             {
-                RepresentationCache.Add(cacheItem);
+                if (!RepresentationCache.ContainsKey(cacheItem.Key))
+                    RepresentationCache.Add(cacheItem);
             }
         }
     }

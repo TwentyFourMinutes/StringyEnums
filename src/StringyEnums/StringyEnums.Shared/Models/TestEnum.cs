@@ -9,7 +9,6 @@ namespace StringyEnums.Shared.Models
 		EnumOne = 1,
 		[StringRepresentation("Enum 2")]
 		EnumTwo = 2,
-		[StringRepresentation("Enum 3")]
 		EnumThree = 4,
 		[StringRepresentation("Enum 4")]
 		EnumFour = 8
